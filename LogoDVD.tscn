@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://27i8urbx343x"]
+
+[ext_resource type="Script" uid="uid://etai1swg6gpm" path="res://dvd_logo.gd" id="1_66esc"]
+[ext_resource type="Texture2D" uid="uid://dsdfvol3c7mdc" path="res://icon.svg" id="2_q0s8k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oswuu"]
+size = Vector2(127, 127)
+
+[node name="LogoDvd" type="Node"]
+
+[node name="DvdLogo" type="CharacterBody2D" parent="."]
+position = Vector2(500, 250)
+collision_layer = 2
+input_pickable = true
+slide_on_ceiling = false
+safe_margin = 1.0
+script = ExtResource("1_66esc")
+
+[node name="Sprite2D" type="Sprite2D" parent="DvdLogo"]
+rotation = 0.000653767
+texture = ExtResource("2_q0s8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DvdLogo"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_oswuu")
