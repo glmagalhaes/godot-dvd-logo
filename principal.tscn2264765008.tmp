@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5xkntw42ogm8"]
+
+[ext_resource type="Script" uid="uid://c6w7yjargxisb" path="res://character_body_2d.gd" id="1_m7tbw"]
+[ext_resource type="Texture2D" uid="uid://dsdfvol3c7mdc" path="res://icon.svg" id="1_tr6oq"]
+[ext_resource type="Script" uid="uid://etai1swg6gpm" path="res://dvd_logo.gd" id="3_rrtif"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rrtif"]
+distance = -648.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_m7tbw"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7cuts"]
+normal = Vector2(-1, 0)
+distance = -1152.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_emcp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7tbw"]
+size = Vector2(123.5, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep5lw"]
+size = Vector2(127, 127)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+
+[node name="Bottom" type="CollisionShape2D" parent="Bottom"]
+shape = SubResource("WorldBoundaryShape2D_rrtif")
+
+[node name="Left" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+shape = SubResource("WorldBoundaryShape2D_m7tbw")
+
+[node name="Right" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+shape = SubResource("WorldBoundaryShape2D_7cuts")
+
+[node name="Top" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_emcp4")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+visible = false
+script = ExtResource("1_m7tbw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(144.25, 94.5)
+shape = SubResource("RectangleShape2D_m7tbw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(145, 95)
+texture = ExtResource("1_tr6oq")
+
+[node name="DvdLogo" type="CharacterBody2D" parent="."]
+position = Vector2(500, 250)
+script = ExtResource("3_rrtif")
+
+[node name="Sprite2D" type="Sprite2D" parent="DvdLogo"]
+rotation = 0.000653767
+texture = ExtResource("1_tr6oq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DvdLogo"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_ep5lw")
