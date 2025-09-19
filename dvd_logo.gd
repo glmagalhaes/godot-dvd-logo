@@ -19,4 +19,4 @@ func _physics_process(delta: float) -> void:
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.pressed:
-		print("ME CLICOU!", event)
+		Global.selected = self;

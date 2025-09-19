@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b5xkntw42ogm8"]
+[gd_scene load_steps=7 format=3 uid="uid://b5xkntw42ogm8"]
 
+[ext_resource type="Script" uid="uid://cmdc0txtxk4n6" path="res://circle.gd" id="2_m7tbw"]
 [ext_resource type="Script" uid="uid://yo35oeg5wkm1" path="res://adiciona_dvd.gd" id="3_7cuts"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rrtif"]
@@ -44,3 +45,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Adicionar"
 script = ExtResource("3_7cuts")
+
+[node name="Circle" type="Node2D" parent="."]
+z_index = 200
+script = ExtResource("2_m7tbw")
