@@ -1,8 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b5xkntw42ogm8"]
+[gd_scene load_steps=6 format=3 uid="uid://b5xkntw42ogm8"]
 
-[ext_resource type="Texture2D" uid="uid://dsdfvol3c7mdc" path="res://icon.svg" id="1_tr6oq"]
 [ext_resource type="Script" uid="uid://yo35oeg5wkm1" path="res://adiciona_dvd.gd" id="3_7cuts"]
-[ext_resource type="Script" path="res://dvd_logo.gd" id="3_rrtif"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rrtif"]
 distance = -648.0
@@ -15,9 +13,6 @@ normal = Vector2(-1, 0)
 distance = -1152.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_emcp4"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep5lw"]
-size = Vector2(127, 127)
 
 [node name="Node2D" type="Node2D"]
 
@@ -41,38 +36,6 @@ shape = SubResource("WorldBoundaryShape2D_7cuts")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
 rotation = 3.1415927
 shape = SubResource("WorldBoundaryShape2D_emcp4")
-
-[node name="DvdLogo2" type="CharacterBody2D" parent="."]
-position = Vector2(558.24866, 271.0385)
-collision_layer = 2
-input_pickable = true
-slide_on_ceiling = false
-safe_margin = 1.0
-script = ExtResource("3_rrtif")
-
-[node name="Sprite2D" type="Sprite2D" parent="DvdLogo2"]
-rotation = 0.000653767
-texture = ExtResource("1_tr6oq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DvdLogo2"]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_ep5lw")
-
-[node name="DvdLogo" type="CharacterBody2D" parent="."]
-position = Vector2(500, 250)
-collision_layer = 2
-input_pickable = true
-slide_on_ceiling = false
-safe_margin = 1.0
-script = ExtResource("3_rrtif")
-
-[node name="Sprite2D" type="Sprite2D" parent="DvdLogo"]
-rotation = 0.000653767
-texture = ExtResource("1_tr6oq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DvdLogo"]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_ep5lw")
 
 [node name="Adiciona_DVD" type="Button" parent="."]
 z_index = 100
