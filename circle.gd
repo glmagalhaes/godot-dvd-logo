@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _draw() -> void:
 	if Global.selected != null:
-		draw_circle(Global.selected.position, 100, Color.WHITE, false, 3, true)
+		draw_circle(Global.selected.global_position, 100, Color.WHITE, false, 3, true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
